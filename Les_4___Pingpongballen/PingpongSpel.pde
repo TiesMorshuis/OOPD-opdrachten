@@ -11,10 +11,8 @@ class PingpongSpel {
  void initPingPongBallen(){
   for (int balNummer = 0; balNummer < ballen.length; balNummer++){
     ballen[balNummer] = new PingpongBal(#FF0000, int(random(30, SCHERMBREEDTE - 30)), int(random(30, SCHERMHOOGTE - 30)), 30.0);
-    // arraypositie vullen met een pingpongbal object
-    
-  }
-   
+    // arraypositie vullen met een pingpongbal object 
+  } 
  }
  
  int getNewIndex() {
