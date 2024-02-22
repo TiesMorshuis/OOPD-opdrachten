@@ -1,15 +1,13 @@
 class Slider {
- float sliderXPos;
- float sliderYPos;
- float sliderBreedte;
- float sliderHoogte;
- int sliderPosities;
+  float sliderHoogte, sliderBreedte, xPos, yPos;
+  int sliderPosities;
   
- Slider(float sliderXPos, float sliderYPos, float sliderBreedte, float sliderHoogte, int sliderPosities){
-    this.sliderXPos = sliderXPos;
-    this.sliderYPos = sliderYPos;
-    this.sliderBreedte = sliderBreedte;
-    this.sliderHoogte = sliderHoogte;
-    this.sliderPosities = sliderPosities;
+ Slider (float sliderHoogte, float sliderBreedte, float xPos, float yPos, int sliderPosities){
+   this.sliderHoogte = sliderHoogte;
+   this.sliderBreedte = sliderBreedte;
+   this.xPos = xPos;
+   this.yPos = yPos;
+   this.sliderPosities = sliderPosities;
  }
+  
 }

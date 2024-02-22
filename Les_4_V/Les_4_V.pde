@@ -1,22 +1,36 @@
-void setup(){
- size(300, 300); 
- background(0);
- 
- Slider slider = new Slider((width - 200) / 2, 50, 200, 50, 5);
-}
-
-
-
-/*float s1X, s1Y, s1Breedte, s1Hoogte;
-int s1NPosities;
+Slider slider;
 void setup() {
    size(300, 200);
 
    background(0);
 
-   s1Breedte = 200;
-   s1Hoogte = 50;
-   s1X = (width - s1Breedte) / 2;
-   s1Y = 50;
-   s1NPosities = 5;
-}*/
+  Slider slider = new Slider(200, 50, (width - 200) / 2, 50, 5);
+}
+void draw() {
+   int s1HuidigePositie = bepaalSliderPositie(s1X, s1Breedte, s1NPosities);
+   
+   tekenSlider(s1X,s1Y, s1Breedte, s1Hoogte, s1HuidigePositie, s1NPosities);
+}
+
+void tekenSlider(float x, float y, float breedte, float hoogte, int positie, int nPosities) {
+   float blokjeBreedte = breedte / nPosities;
+   
+   noStroke();
+   
+   fill(255);
+   rect(x, y, breedte, hoogte);
+   
+   fill(#2257F0);
+   rect(x + positie * blokjeBreedte, y, blokjeBreedte, hoogte);
+}
+
+int bepaalSliderPositie(float x, float breedte, int nPosities) {
+   float blokjeBreedte = breedte / nPosities;
+   if (mouseX < x) {
+      return 0;
+   } else if (mouseX >= breedte + x) {
+      return nPosities - 1;
+   } else {
+      return floor((mouseX - x) / blokjeBreedte);
+   }
+}
